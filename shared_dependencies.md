@@ -1,19 +1,13 @@
-1. Scrapy: Scrapy is a Python framework for large scale web scraping. It provides all the tools needed to extract data from websites, process it, and store it in your preferred format. It is used in all the files for web scraping.
+1. "src/utils.py": This file will likely contain utility functions that are used across multiple files. Shared functions might include error handling, data validation, and logging functions.
 
-2. myanimelist_spider.py: This is the main spider file that contains the scraping logic. It uses Scrapy's Spider class and its methods like start_requests, parse, etc. It is used in the scrapy.cfg file to define the spider and in the pipelines.py file to process the scraped data.
+2. "src/database/connection.py": This file will establish a connection to the database. The connection details (like database name, username, password) will be shared across all files that interact with the database.
 
-3. items.py: This file defines the data model for the items scraped. It is used in the myanimelist_spider.py file to define the items to be scraped and in the pipelines.py file to process the scraped data.
+3. "src/database/models.py": This file will define the data schemas for the database. These schemas will be shared across all files that interact with the database.
 
-4. middlewares.py: This file contains the Scrapy middleware classes for handling requests and responses. It is used in the settings.py file to define the middleware settings.
+4. "src/controllers/user_controller.py" and "src/controllers/product_controller.py": These files will contain functions for handling user and product data respectively. Shared function names might include "get", "post", "update", and "delete".
 
-5. pipelines.py: This file contains the Scrapy item pipelines for processing the scraped data. It is used in the settings.py file to define the item pipeline settings and in the myanimelist_spider.py file to process the scraped data.
+5. "src/views/user_view.py" and "src/views/product_view.py": These files will contain the id names of DOM elements that the JavaScript functions will use. Shared id names might include "user-list", "product-list", "user-detail", and "product-detail".
 
-6. settings.py: This file contains the Scrapy settings for the project. It is used in the scrapy.cfg file to define the project settings and in the myanimelist_spider.py, middlewares.py, and pipelines.py files to configure the spider, middleware, and pipelines.
+6. "tests/test_main.py", "tests/test_utils.py", "tests/test_database_connection.py", "tests/test_database_models.py", "tests/test_user_controller.py", "tests/test_product_controller.py", "tests/test_user_view.py", "tests/test_product_view.py": These files will contain test cases for the corresponding files in the src directory. Shared function names might include "test_get", "test_post", "test_update", and "test_delete".
 
-7. __init__.py: This file is used to indicate that a directory contains a Python package. It is used in all the files to import the necessary modules and classes.
-
-8. DOM Elements: The specific id names of the DOM elements that the JavaScript functions will use to extract data from the website are shared across the myanimelist_spider.py file.
-
-9. Spoiler Show Function: The function to click on the spoiler and show the hidden character traits is shared across the myanimelist_spider.py file.
-
-10. Write to File Function: The function to write the scraped character traits into a txt file is shared across the myanimelist_spider.py and pipelines.py files.
+7. Message names: Across all files, there might be shared message names for error handling and user notifications. Examples might include "ERROR_INVALID_DATA", "ERROR_DATABASE_CONNECTION", "SUCCESS_POST", and "SUCCESS_DELETE".
